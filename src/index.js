@@ -1,16 +1,20 @@
 import express from 'express'
-import mongoose from 'mongoose'
 import helmet from 'helmet'
 import cors from 'cors'
 import { json, urlencoded } from 'body-parser'
 import dotenv from 'dotenv'
-dotenv.config()
-
-import config from './config' 
-
 // import api routes
 import api from './routes/index'
 import { serverResponse } from './utils/helpers'
+import { connect } from 'mongoose'
+
+connect('mongodb://127.0.0.1:27017/tutoract', {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true
+})
+
+dotenv.config()
 
 const app = express()
 

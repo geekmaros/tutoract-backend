@@ -15,6 +15,9 @@
       {
         "loose": true
       }
-    ]
+    ],
+    ["@babel/transform-runtime"],
+   [ "@babel/plugin-transform-async-to-generator"],
+   ["@babel/plugin-proposal-async-generator-functions"]
   ]
 }
